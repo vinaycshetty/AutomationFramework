@@ -1,5 +1,6 @@
 package com.vs.framework.manager;
 
+import com.vs.framework.helpers.HelperConstants;
 import com.vs.framework.utils.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -31,15 +32,15 @@ public class WebDriverSetUp {
         String browser = configReader.getProperty("browser");
 
         switch (browser.toLowerCase()) {
-            case "chrome":
+            case HelperConstants.CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver.set(new ChromeDriver());
                 break;
-            case "firefox":
+            case HelperConstants.FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver.set(new FirefoxDriver());
                 break;
-            case "edge":
+            case HelperConstants.EDGE:
                 WebDriverManager.edgedriver().setup();
                 driver.set(new EdgeDriver());
                 break;
